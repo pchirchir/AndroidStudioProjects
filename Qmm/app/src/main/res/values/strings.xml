@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Qmm</string>
+    <string name="enter_your_details">Enter your details</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="next">Next</string>
+</resources>
