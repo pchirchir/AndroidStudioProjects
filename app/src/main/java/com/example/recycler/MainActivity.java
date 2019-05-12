@@ -1,6 +1,8 @@
 package com.example.recycler;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
     FirebaseDatabase mFirebaseDatabase;
+    FloatingActionButton gotoAddDataBtn;
     DatabaseReference mRef;
     private FirebaseRecyclerAdapter<Model, ViewHolder> firebaseRecyclerAdapter;
 
@@ -40,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mRef = mFirebaseDatabase.getReference("Data");
 
+        gotoAddDataBtn = findViewById(R.id.goto_add_data_fab);
+
+        gotoAddDataBtn.setOnClickListener(view -> startActivity(new Intent(this, AddDataActivity.class)));
 
         readData();
     }
